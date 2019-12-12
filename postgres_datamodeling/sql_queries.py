@@ -19,7 +19,7 @@ artist_table_create = (
     """CREATE TABLE IF NOT EXISTS artists (artist_id varchar PRIMARY KEY, name varchar, location varchar, latitude numeric, longitude numeric);""")
 
 time_table_create = (
-    """CREATE TABLE IF NOT EXISTS time (start_time numeric PRIMARY KEY, hour numeric, day numeric, week numeric, month numeric, year int, weekday int);""")
+    """CREATE TABLE IF NOT EXISTS time (start_time timestamp PRIMARY KEY, hour numeric, day numeric, week numeric, month numeric, year int, weekday int);""")
 
 # INSERT RECORDS
 songplay_table_insert = (
