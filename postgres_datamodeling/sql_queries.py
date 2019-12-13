@@ -10,7 +10,7 @@ time_table_drop = "DROP table IF EXISTS time"
 songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id BIGSERIAL PRIMARY KEY, start_time numeric, user_id varchar, level varchar, song_id varchar, artist_id varchar, session_id varchar, location varchar, user_agent varchar);""")
 
 user_table_create = (
-    """CREATE TABLE IF NOT EXISTS users (user_id varchar PRIMARY KEY, first_name varchar, last_name varchar, gender varchar, level varchar);""")
+    """CREATE TABLE IF NOT EXISTS users (userId varchar PRIMARY KEY, firstName varchar, lastName varchar, gender varchar, level varchar);""")
 
 song_table_create = (
     """CREATE TABLE IF NOT EXISTS songs (song_id varchar PRIMARY KEY, title varchar, artist_id varchar, year int, duration numeric);""")
@@ -26,7 +26,7 @@ songplay_table_insert = (
     """INSERT INTO songplays (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);""")
 
 user_table_insert = (
-    """INSERT INTO users (user_id, first_name, last_name, gender, level) VALUES (%s, %s, %s, %s, %s);""")
+    """INSERT INTO users (userId, firstName, lastName, gender, level) VALUES (%s, %s, %s, %s, %s);""")
 
 song_table_insert = (
     """INSERT INTO songs (song_id, title, artist_id, year, duration) VALUES (%s, %s, %s, %s, %s);""")
