@@ -7,7 +7,7 @@ artist_table_drop = "DROP table IF EXISTS artists"
 time_table_drop = "DROP table IF EXISTS time"
 
 # CREATE TABLES
-songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id BIGSERIAL PRIMARY KEY, start_time numeric, user_id varchar, level varchar, song_id varchar, artist_id varchar, session_id varchar, location varchar, user_agent varchar);""")
+songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id BIGSERIAL PRIMARY KEY, start_time numeric NOT NULL, user_id varchar, level varchar, song_id varchar, artist_id varchar, session_id varchar, location varchar, user_agent varchar);""")
 
 user_table_create = (
     """CREATE TABLE IF NOT EXISTS users (userId varchar PRIMARY KEY, firstName varchar, lastName varchar, gender varchar, level varchar);""")
@@ -39,8 +39,8 @@ time_table_insert = (
 
 # FIND SONGS
 
-song_select = (
-    """SELECT song.song_id, song.title song.duration FROM songs WHERE duration > 200;""")
+song_select = ("""SELECT songs.song_id, artists.artist_id, songs.title, artists.name, songs.duration FROM songs JOIN artists ON songs.artist_id = artists.artist_id WHERE (songs.title = %s AND artists.name = %s AND songs.duration = %s)""")
+
 
 # QUERY LISTS
 
