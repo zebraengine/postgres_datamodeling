@@ -6,6 +6,12 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """Open JSON files located at filepath (data/song_data) then store the parsed file into a Pandas dataframe for song_data and artist_data. The dataframes are then used to perform a insert statement for song_table and artist_table.
+    
+    :param cur: Open a cursor to perform database operations
+    :param filepath: filepath of JSON file
+    :return: Null
+    """
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -21,6 +27,12 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """Open JSON files located at filepath (data/log_data) then store the parsed file into a Pandas dataframe that is filtered. The filtered data is then split into time data, users, and songplay data. The relevant insert statements are utilized in order to load data into the database.
+    
+    :param cur: Open a cursor to perform database operations
+    :param filepath: filepath of JSON file
+    :return: Null
+    """
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -67,7 +79,16 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
-    # get all files matching extension from directory
+   """Collect all the matchin file extensions in the filepath directory that have a *.json extension. A count of the number of files matached is then counted until all detected files are processed. Each file is 
+    
+    :param cur: Open a cursor to perform database operations
+    :param conn: Create a new database connection
+    :param filepath: filepath of JSON file
+    :param func: Contains the function that will be performed on the provided filepath
+    :return: Null
+   """
+   
+   # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
         files = glob.glob(os.path.join(root, '*.json'))
