@@ -6,7 +6,9 @@ tags: [postgres, python, ETL, ipython]
 <h2>Summary</h2>
 ---
 
-This project involved the creation of an ETL process for a Postgres relational database. The first step required an understanding of the dataset that would be processed and the primary function of the database, to allow analysis on song play data for a music streaming application. A star schema was employed in order to create a fact table (Songplay) and associated dimensions (Users, Songs, Artists, and Time). The data modeling was followed by the creation of the relevant tables and insert queries, as well as the creation of the ETL steps needed to convert JSON files into intermediary Pandas dataframe and eventually inserted by row into the Postgres database. The database in this exercise is called ***Sparkifydb***.
+This project involved the creation of an ETL process for a Postgres relational database. The first step required an understanding of the dataset that would be processed and the primary function of the database, to allow analysis on song play data for a music streaming application. 
+
+A star schema was employed in order to create a fact table (Songplay) and associated dimensions (Users, Songs, Artists, and Time). The data modeling was followed by the creation of the relevant tables and insert queries, as well as the creation of the ETL steps needed to convert JSON files into intermediary Pandas dataframe and eventually inserted by row into the Postgres database. The database in this exercise is called ***Sparkifydb***.
 
 <h2>Running Python Script</h2>
 ---
@@ -55,7 +57,7 @@ The repository contains the following files:
 <li>test.ipynb</li>
 </ol>
 
-The data used in this exercise is stored inside the ***data*** folder, and it contains log_data and song_data as subdirectories. Inside each subdirectory is are the JSON files that are parsed to create the database.
+The data used in this exercise is stored inside the ***data*** folder, and it contains log_data and song_data as subdirectories. Inside each subdirectory are the JSON files that are parsed to create the database.
 
 The ***create_tables.py*** file, as was previously mentioned, initializes the database tables in the schema defined inside of ***sql_queries.py***.
 
