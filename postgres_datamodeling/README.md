@@ -34,6 +34,7 @@ The next step is to run ***etl.py***:
     4/30 files processed.
     5/30 files processed.
     ...
+    >>
 
 To test that the creation and insertion of records successfully get inserted, you need to run a ***test.ipynb***. This notebook contains the steps needed to connect to the sparkifydb database.
 
@@ -54,4 +55,10 @@ The repository contains the following files:
 <li>test.ipynb</li>
 </ol>
 
-The README file includes a summary of the project, how to run the Python scripts, and an explanation of the files in the repository. 
+The data used in this exercise is stored inside the ***data*** folder, and it contains log_data and song_data as subdirectories. Inside each subdirectory is are the JSON files that are parsed to create the database.
+
+The ***create_tables.py*** file, as was previously mentioned, initializes the database tables in the schema defined inside of ***sql_queries.py***.
+
+The ***etl.ipynb*** and ***etl.py*** files are where the actual ETL process takes place. The python script gathers the paths to the data stored inside the relevant song and log data directories and then proceeds to process and insert the data into the correct table.
+
+The last file is ***test.ipynb***, which allows for the ***sql_queries.py***, ***create_tables.py***, ***etl.py***, and ***etl.ipynb*** to be checked by connecting to the database and performing basic select statements that let you see what records are inside the database.
