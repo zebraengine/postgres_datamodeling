@@ -57,7 +57,7 @@ The repository contains the following files:
 <li>test.ipynb</li>
 </ol>
 
-The data used in this exercise is stored inside the ***data*** folder, and it contains log_data and song_data as subdirectories. Inside each subdirectory are the JSON files that are parsed to create the database.
+The data used in this exercise is stored inside the ***data*** folder, and it contains log_data and song_data as subdirectories. Inside each subdirectory are the JSON files that are parsed to fill the database.
 
 The ***create_tables.py*** file, as was previously mentioned, initializes the database tables in the schema defined inside of ***sql_queries.py***.
 
