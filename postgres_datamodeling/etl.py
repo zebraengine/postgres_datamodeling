@@ -55,7 +55,10 @@ def process_log_file(cur, filepath):
     # insert user records
     for i, row in user_df.iterrows():
         cur.execute(user_table_insert, row)
-
+        
+    #Convert ts to timestamp
+    df["ts"] = pd.to_datetime(df["ts"], unit="ms")
+    
     # insert songplay records
     for index, row in df.iterrows():
         
